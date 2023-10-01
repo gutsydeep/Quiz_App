@@ -127,14 +127,13 @@ const startTimer = () => {
         if(timeLeft === 0){
         currentQuestionIndex++;
         if (currentQuestionIndex < quiz.length) {
-        timeLeft = 15;
+        timeLeft = 30;
         showQuestions();
         }
-            else{
-                startBtn.style.display = "block";
-                container.style.display = "none";
-                return;
-            }
+        else{
+        stopTimer();
+        showScore();
+        }
         }
     }
     timerID = setInterval(countDown, 1000);
